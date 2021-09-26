@@ -22,9 +22,10 @@ MainWindow::~MainWindow()
 void MainWindow::TimerSlot()
 {
 
-   ui->LatitudeLabel->setText("Широта : "+QString::number(s1.nowLatitude));
-   ui->LongitudeLabel->setText("Долгота : "+QString::number(s1.nowLongitude));
+   ui->LatitudeLabel->setText("Широта : "+QString::number(s1.Latitude()));
+   ui->LongitudeLabel->setText("Долгота : "+QString::number(s1.Longitude()));
    t1.append(s1.Cordinate());
    ui->DistanseLabel->setText("Расстояние : "+t1.distanceKm()+" Km");
+   ui->SpeedLabel->setText("Скорость : "+t1.speedKmh());
 }
 

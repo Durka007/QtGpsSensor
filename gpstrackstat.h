@@ -27,9 +27,6 @@ public:
     double speed() const;
     QString speedKmh() const;
 
-    double longitude() const;
-    double latitude() const;
-
     double distance() const;
     QString distanceKm() const;
 

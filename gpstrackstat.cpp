@@ -81,8 +81,8 @@ void GPSTrackStat::append(const QGeoCoordinate& currentPoint)
         return;
     }
     if(m_lastPoint.latitude() == 0 || m_lastPoint.longitude() == 0 ||
-            currentPoint.latitude()-m_lastPoint.latitude() <0.001 ||
-            currentPoint.longitude()-m_lastPoint.longitude() <0.001)
+            currentPoint.latitude()-m_lastPoint.latitude() <0.00025 ||
+            currentPoint.longitude()-m_lastPoint.longitude() <0.00025)
     {
         m_lastPoint = currentPoint;
         return;

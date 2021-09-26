@@ -53,6 +53,19 @@
      <string>Расстояние:Nan</string>
     </property>
    </widget>
+   <widget class="QLabel" name="SpeedLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>381</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Скорость:Nan</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
