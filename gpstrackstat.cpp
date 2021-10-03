@@ -4,6 +4,7 @@
 #include <QGeoPositionInfoSource>
 #include "gpsinfo.h"
 #include "gpstrackstat.h"
+#include "gpsinfo.h"
 
 GPSTrackStat::GPSTrackStat(QObject *parent)
     : QObject(parent)
@@ -80,22 +81,18 @@ void GPSTrackStat::append(const QGeoCoordinate& currentPoint)
     {
         return;
     }
-    if(m_lastPoint.latitude() == 0 || m_lastPoint.longitude() == 0 ||
-            currentPoint.latitude()-m_lastPoint.latitude() <0.00025 ||
-            currentPoint.longitude()-m_lastPoint.longitude() <0.00025)
+    if(currentPoint.latitude()>0&& currentPoint.longitude()>0)
     {
+        if(m_lastPoint.isValid())
+        {
+            m_distance = m_distance + currentPoint.distanceTo(m_lastPoint);
+
+
+            emit distanceChanged();
+        }
+
         m_lastPoint = currentPoint;
-        return;
     }
-    if(m_lastPoint.isValid())
-    {
-        m_distance = m_distance + currentPoint.distanceTo(m_lastPoint);
-
-
-        emit distanceChanged();
-    }
-
-    m_lastPoint = currentPoint;
 }
 
 void GPSTrackStat::onTick()

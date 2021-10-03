@@ -29,6 +29,7 @@ private:
     QTimer *timer;
     GPSTrackStat t1;
     GPSInfo s1;
+
 private slots:
         void TimerSlot();
 };

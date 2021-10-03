@@ -11,12 +11,14 @@ CONFIG += c++11
 SOURCES += \
     gpfinfo.cpp \
     gpstrackstat.cpp \
+    kalmafilter.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     gpsinfo.h \
     gpstrackstat.h \
+    kalmanfilter.h \
     mainwindow.h
 
 FORMS += \
