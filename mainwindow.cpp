@@ -3,6 +3,9 @@
 #include <QtSensors>
 #include <QGeoCoordinate>
 
+#include <QtDebug>
+#include <math.h>
+#include <QAccelerometer>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -11,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     timer= new QTimer(this);
     t1.start();
     connect(timer,SIGNAL(timeout()),this,SLOT(TimerSlot()));
-    timer->start(10);
+    timer->start();
 }
 
 MainWindow::~MainWindow()
